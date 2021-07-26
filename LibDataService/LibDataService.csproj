@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B31F3B89-C0C0-463A-828E-05564194688C}</ProjectGuid>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>LibDataService</RootNamespace>
+    <AssemblyName>LibDataService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataModels\Container\IDataContainer.cs" />
+    <Compile Include="DataModels\Description\Domain\IDomainConstruction.cs" />
+    <Compile Include="DataModels\Description\Domain\IDomainConstructionField.cs" />
+    <Compile Include="DataModels\Description\IDataDescription.cs" />
+    <Compile Include="AssetService\AssetManager.cs" />
+    <Compile Include="AssetService\IAssetManager.cs" />
+    <Compile Include="UserService\IUserManager.cs" />
+    <Compile Include="UserService\UserManager.cs" />
+    <Compile Include="SettingsService\ACRSettings.cs" />
+    <Compile Include="SettingsService\interface\ISettingsCallback.cs" />
+    <Compile Include="SettingsService\interface\ISettingsComplexData.cs" />
+    <Compile Include="SettingsService\interface\ISettingsData.cs" />
+    <Compile Include="SettingsService\interface\ISettingsManager.cs" />
+    <Compile Include="SettingsService\implementation\SettingsCallbackDebug.cs" />
+    <Compile Include="SettingsService\implementation\SettingsDataInt.cs" />
+    <Compile Include="SettingsService\implementation\SettingsManager.cs" />
+    <Compile Include="SettingsService\implementation\SettingsErrorTypes.cs" />
+    <Compile Include="SettingsService\interface\ISettingDefaultValue.cs" />
+    <Compile Include="DataModels\Callback\IDataCallback.cs" />
+    <Compile Include="CacheService\interface\ICacheCallback.cs" />
+    <Compile Include="CacheService\interface\ICacheManager.cs" />
+    <Compile Include="CacheService\implementation\CacheManagerDictonary.cs" />
+    <Compile Include="CacheService\implementation\CacheDataContainer.cs" />
+    <Compile Include="CacheService\interface\ICacheDataContainer.cs" />
+    <Compile Include="Helper\DomainHelper.cs" />
+    <Compile Include="CacheService\interface\ICacheData.cs" />
+    <Compile Include="AssetService\AssetProcessContainer.cs" />
+    <Compile Include="DataModels\Container\implementation\DataContainerSimpleType.cs" />
+    <Compile Include="SettingsService\implementation\SettingsDataString.cs" />
+    <Compile Include="SettingsService\implementation\SettingsDataFloat.cs" />
+    <Compile Include="SettingsService\implementation\SettingsDataBool.cs" />
+    <Compile Include="Tools\Log.cs" />
+    <Compile Include="Extension\TypeExtensions.cs" />
+    <Compile Include="Helper\CompilingModeDectector.cs" />
+    <Compile Include="Exception\BaseException.cs" />
+    <Compile Include="Exception\IException.cs" />
+    <Compile Include="CacheService\implementation\CachingException.cs" />
+    <Compile Include="AssetService\AssetException.cs" />
+    <Compile Include="SettingsService\implementation\SettingsException.cs" />
+    <Compile Include="DataModels\Container\IDataSource.cs" />
+    <Compile Include="DataModels\Callback\DataDelegateCallback.cs" />
+    <Compile Include="ConnectionService\ConnectionOperationContainer.cs" />
+    <Compile Include="ConnectionService\ConnectionException.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionAuth.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionDescription.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionEncryption.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionManager.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionHeaders.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionCookie.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionTimeout.cs" />
+    <Compile Include="ConnectionService\HttpQueue.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionPriorityProcessing.cs" />
+    <Compile Include="ConnectionService\Interface\IConnectionCustomPayload.cs" />
+    <Compile Include="Exception\Logger\Implementation\ExceptionLogger.cs" />
+    <Compile Include="Exception\Logger\Interfaces\IExceptionLogger.cs" />
+    <Compile Include="ConnectionService\Implementation\ConnectionManagerFlurl.cs" />
+    <Compile Include="ConnectionService\Implementation\BasicAuthentification.cs" />
+    <Compile Include="ConnectionService\Implementation\AuthentificationType.cs" />
+    <Compile Include="ConnectionService\Implementation\RequestType.cs" />
+    <Compile Include="Exception\ExceptionType.cs" />
+    <Compile Include="Exception\ExceptionInfo.cs" />
+    <Compile Include="DataService\DataManager.cs" />
+    <Compile Include="DataService\IDataOperation.cs" />
+    <Compile Include="DataService\IDataManager.cs" />
+    <Compile Include="DataService\DataSuccessEventArgs.cs" />
+    <Compile Include="DataService\DataFailEventArgs.cs" />
+    <Compile Include="DataModels\Description\AbstractDescription.cs" />
+    <Compile Include="DataService\ExceptionEventArgs.cs" />
+    <Compile Include="ConnectionService\ConnectionContentException.cs" />
+    <Compile Include="DataService\ExceptionConnectionEventArgs.cs" />
+    <Compile Include="Helper\ConnectionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\..\..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\..\..\packages\PCLStorage.1.0.2\lib\portable-net45+wp8+wpa81+win8+monoandroid+monotouch+Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Extensions">
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives">
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\..\..\packages\NUnit.3.6.0\lib\portable-net45+win8+wp8+wpa81\nunit.framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\..\..\packages\Microsoft.AppCenter.1.6.1\lib\portable-net45+win8+wpa81+wp8\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes">
+      <HintPath>..\..\..\packages\Microsoft.AppCenter.Crashes.1.6.1\lib\portable-net45+win8+wpa81+wp8\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Flurl">
+      <HintPath>..\..\..\packages\Flurl.2.4.0\lib\portable-net40+sl5+win8+wp8+wpa81\Flurl.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.10.0.3\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Acr.Settings">
+      <HintPath>..\..\..\packages\Acr.Settings.6.0.0\lib\portable-net45+win8+wpa81+wp8\Acr.Settings.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Acr.Settings.Interface">
+      <HintPath>..\..\..\packages\Acr.Settings.6.0.0\lib\portable-net45+win8+wpa81+wp8\Acr.Settings.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Flurl.Http">
+      <HintPath>..\..\..\packages\Flurl.Http.1.2.0\lib\portable-net45+win8+wp8+wpa81\Flurl.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics.Vectors">
+      <HintPath>..\..\..\packages\System.Numerics.Vectors.4.5.0\lib\portable-net45+win8+wp8+wpa81\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation">
+      <HintPath>..\..\..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\netstandard1.1\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\..\..\packages\System.ValueTuple.4.5.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\..\..\packages\Xamarin.Essentials.1.3.1\lib\netstandard1.0\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CacheService\" />
+    <Folder Include="DataModels\" />
+    <Folder Include="AssetService\" />
+    <Folder Include="ConnectionService\" />
+    <Folder Include="SettingsService\" />
+    <Folder Include="UserService\" />
+    <Folder Include="SettingsService\interface\" />
+    <Folder Include="SettingsService\implementation\" />
+    <Folder Include="DataModels\Callback\" />
+    <Folder Include="CacheService\implementation\" />
+    <Folder Include="CacheService\interface\" />
+    <Folder Include="Helper\" />
+    <Folder Include="DataModels\Container\implementation\" />
+    <Folder Include="Tools\" />
+    <Folder Include="Extension\" />
+    <Folder Include="Exception\" />
+    <Folder Include="Helper\Serializator\" />
+    <Folder Include="ConnectionService\Interface\" />
+    <Folder Include="ConnectionService\Implementation\" />
+    <Folder Include="DataService\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <Import Project="..\..\real_anastasia\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\real_anastasia\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+</Project>
